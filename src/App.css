@@ -1,38 +1,87 @@
+:root {
+  --primary: #f30051;
+  --secondary: #3f1985;
+  --darK: #131313;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+}
+body {
+  background: var(--white);
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.calculator {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 2px 64px rgba(0, 0, 0, 0.1);
+}
+.display {
+  padding: 16px;
+  text-align: right;
+  font-size: 32px;
+  color: var(--white);
+  background-color: var(--darK);
+  border-radius: 16px 16px 0 0;
+  font-size: 32px;
+}
+.display span {
+  font-size: 32px;
+  color: var(--white);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+button {
+  appearance: none;
+  background-color: var(--darK);
+  border: none;
+  color: var(--white);
+  font-size: 32px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  background-color: var(--primary);
+}
+.operators {
+  display: flex;
+}
+.operators button {
+  flex: 1 1 0%;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 32px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
+}
+.operators button:hover {
+  background-color: var(--secondary);
+}
+.digits {
+  display: flex;
+  flex-wrap: wrap;
+}
+.digits button {
+  flex: 1 1 33.333%;
+  max-width: 33.333%;
+  background-color: var(--darK);
+}
+.digits button:hover {
+  background-color: var(--primary);
 }
